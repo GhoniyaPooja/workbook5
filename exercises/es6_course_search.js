@@ -39,20 +39,22 @@ let courses = [
 ];
 
 // When does the PROG200 course start?
-let course = courses.find((course) => course.CourseId == "PROG200");
-
-if (course) {
-  console.log(`The PROG200 course starts on ${course.StartDate}`);
-} else {
-  console.log("Course not found.");
-}
+let prog200Course1 = courses.filter((course) => course.CourseId == "PROG200");
+console.log(prog200Course1[0].StartDate);
 
 // What is the title of the PROJ500 course?
-let coursePROJ500 = courses.find((course) => course.CourseId == "PROJ500");
+let proj500Course = courses.find((course) => course.CourseId == "PROJ500");
+console.log(proj500Course.Title);
 
-if (coursePROJ500) {
-  console.log(`The PROJ500 course starts on ${coursePROJ500.Title}`);
-} else {
-  console.log("Course not found.");
-}
+// What are the titles of the courses that cost $50 or less?
+let coursesLessThanFifty = courses.filter( (course) => parseFloat(course.Fee) <= 50);
+  let titleLessThanFifty = coursesLessThanFifty.filter((course) => course.Title);
+  console.log("Titles of courses that cost $ 50 or less:");
+  console.log(titleLessThanFifty);
+
+  // What classes meet in "Classroom 1"?
+  let coursesInClassroom1 = courses.filter((course) => course.Location == "Classroom 1" );
+  let titleInClassroom1 = coursesInClassroom1.filter(course => course.Title);
+  console.log("Classes that meet in 'Classroom 1':");
+  console.log(titleInClassroom1);
 
