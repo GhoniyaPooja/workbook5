@@ -29,7 +29,8 @@ let cart = [
 // });
 
 
-//***********************using arrow *******************************
+//***********************using arrow and forEach*******************************
 let productName = cart.map((product) => product.item);
-
-console.log(productName);
+productName.forEach(function print(productName) {
+    console.log(productName);
+});
