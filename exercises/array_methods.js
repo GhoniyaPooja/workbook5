@@ -15,9 +15,21 @@ let cart = [
 //     productName.push(product.item);
 //    }
 
-function getProductName(product) {
-  return product.item;
-}
-let productName = cart.map(getProductName);
+
+//******************Using the map ()*********************************** 
+// function getProductName(product) {
+//   return product.item;
+// }
+// let productName = cart.map(getProductName);
+
+
+//************************Using function inside the map (function name not required)******************************
+// let productName = cart.map(function (product) {
+//     return product.item
+// });
+
+
+//***********************using arrow *******************************
+let productName = cart.map((product) => product.item);
 
 console.log(productName);
