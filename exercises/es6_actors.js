@@ -30,6 +30,13 @@ let academyMembers = [
 let memId = academyMembers.find((memId) => memId.memID == 187);
 console.log(memId.name);
 // Who has been in at least 3 films?
+let memberAtLeastThreeFilms = academyMembers.filter(member => member.films.length >= 3).forEach(member => console.log(`${member.memID} ${member.name} ${member.films}`));
+
+
 // Who has a name that starts with "Bob"?
-// HARDER: Which Academy Members have been in a film
-// that starts with "A"
+let membersNameStartingWithBob = academyMembers.filter(member => member.name.startsWith("Bob")).forEach(member => console.log(`${member.name}`));
+// console.log(membersNameStartingWithBob);
+
+// HARDER: Which Academy Members have been in a film that starts with "A"
+let membersInFilmStartingWithA = academyMembers.filter(member => member.films.some(film => film.startsWith("A"))).forEach(member => console.log(`${member.name}`));
+  
