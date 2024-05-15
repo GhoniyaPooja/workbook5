@@ -27,7 +27,21 @@
     </div>
     <script>
         "use strict";
-        let imageGroupDivs = document.getElementById(".imageGroup");
+        window.onload = function(){
+          let imageGroupDiv = document.querySelectorAll(".imageGroup");
+        
+        for (const div of imageGroupDiv) {
+              div.style.border = "1px solid red"
+              
+            }
+
+            let imageAlt = document.querySelectorAll("img:not([alt])");
+
+            for (const img of imageAlt) {
+              img.alt = "graffiti image"
+              
+            }
+        }
         
         console.log(imageGroupDivs);
     </script>
